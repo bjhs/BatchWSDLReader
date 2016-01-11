@@ -22,9 +22,6 @@
 }</outputType>
   </service>
   <service>
-    <name></name>
-  </service>
-  <service>
     <name>validateNIF</name>
     <inputType>{
     "element": [

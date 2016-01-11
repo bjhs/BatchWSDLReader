@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WSDLReader.iml" filepath="$PROJECT_DIR$/WSDLReader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BatchWSDLReader.iml" filepath="$PROJECT_DIR$/BatchWSDLReader.iml" />
     </modules>
   </component>
 </project>

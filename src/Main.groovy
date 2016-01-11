@@ -17,6 +17,6 @@ class Main {
             services = batchWSDLReader.readFile(file)
         }
         println 'Generating XML file...'
-        batchWSDLReader.createXML(args[0], services)
+        batchWSDLReader.createXML(args[0]+'Output', services)
     }
 }
