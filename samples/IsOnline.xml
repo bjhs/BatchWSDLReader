@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://veronline" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ax2149="http://veronline/xsd" targetNamespace="http://veronline">
+  <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema xmlns:ax2150="http://veronline/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://veronline">
+      <xs:import namespace="http://veronline/xsd" />
+      <xs:element name="isOnline">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="isOnlineResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax2150:ObjectResultIsOnline" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://veronline/xsd">
+      <xs:complexType name="ObjectResultIsOnline">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="returnCode" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="isOnlineRequest">
+    <wsdl:part name="parameters" element="ns:isOnline" />
+  </wsdl:message>
+  <wsdl:message name="isOnlineResponse">
+    <wsdl:part name="parameters" element="ns:isOnlineResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IsOnlinePortType">
+    <wsdl:operation name="isOnline">
+      <wsdl:input message="ns:isOnlineRequest" wsaw:Action="urn:isOnline" />
+      <wsdl:output message="ns:isOnlineResponse" wsaw:Action="urn:isOnlineResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IsOnlineSoap11Binding" type="ns:IsOnlinePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="isOnline">
+      <soap:operation soapAction="urn:isOnline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IsOnlineSoap12Binding" type="ns:IsOnlinePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="isOnline">
+      <soap12:operation soapAction="urn:isOnline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IsOnlineHttpBinding" type="ns:IsOnlinePortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="isOnline">
+      <http:operation location="isOnline" />
+      <wsdl:input>
+        <mime:content type="application/xml" part="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="application/xml" part="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IsOnline">
+    <wsdl:port name="IsOnlineHttpSoap11Endpoint" binding="ns:IsOnlineSoap11Binding">
+      <soap:address location="http://127.0.0.1:8080/axis2/services/IsOnline.IsOnlineHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="IsOnlineHttpSoap12Endpoint" binding="ns:IsOnlineSoap12Binding">
+      <soap12:address location="http://127.0.0.1:8080/axis2/services/IsOnline.IsOnlineHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="IsOnlineHttpEndpoint" binding="ns:IsOnlineHttpBinding">
+      <http:address location="http://127.0.0.1:8080/axis2/services/IsOnline.IsOnlineHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

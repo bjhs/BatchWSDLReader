@@ -1,0 +1,68 @@
+<services>
+  <service>
+    <name>IsOnline</name>
+    <outputType>{
+    "element": [
+        {
+            "type": "xs:string",
+            "minOccurs": "0",
+            "nillable": "true",
+            "name": "errorMessage",
+            "maxOccurs": ""
+        },
+        {
+            "type": "xs:boolean",
+            "minOccurs": "0",
+            "nillable": "",
+            "name": "returnCode",
+            "maxOccurs": ""
+        }
+    ],
+    "name": "ObjectResultIsOnline"
+}</outputType>
+  </service>
+  <service>
+    <name></name>
+  </service>
+  <service>
+    <name>validateNIF</name>
+    <inputType>{
+    "element": [
+        {
+            "type": "xs:string",
+            "minOccurs": "0",
+            "nillable": "true",
+            "name": "DocumentNumber",
+            "maxOccurs": ""
+        },
+        {
+            "type": "xs:string",
+            "minOccurs": "0",
+            "nillable": "true",
+            "name": "DocumentType",
+            "maxOccurs": ""
+        }
+    ],
+    "name": "InputvalidateNIF"
+}</inputType>
+    <outputType>{
+    "element": [
+        {
+            "type": "xs:int",
+            "minOccurs": "0",
+            "nillable": "",
+            "name": "ReturnCode",
+            "maxOccurs": ""
+        },
+        {
+            "type": "xs:string",
+            "minOccurs": "0",
+            "nillable": "true",
+            "name": "ErrorMessage",
+            "maxOccurs": ""
+        }
+    ],
+    "name": "OutputvalidateNIF"
+}</outputType>
+  </service>
+</services>
