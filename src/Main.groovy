@@ -1,5 +1,4 @@
 import groovy.io.FileType
-import pt.wsdl.reader.*
 
 /**
  * Created by bjs on 18/12/2015.
